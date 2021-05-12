@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Skill } from '../models/skill';
 
 @Injectable({
@@ -7,15 +7,17 @@ import { Skill } from '../models/skill';
 })
 export class SkillService {
  
+  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
+
   constructor(
     private http: HttpClient,
   ) {}
 
   updateSkill(skill: Skill) {
-    return this.http.put('/api/skills', skill);
+    return this.http.put<Skill>('/api/skills', skill, this.httpOptions);
   }
 
   findAll() {
-    return this.http.get('/api/skills');
+    return this.http.get<Skill[]>('/api/skills');
   }
 }
