@@ -1,3 +1,48 @@
-.example-card {
-    max-width: 400px;
-  }
+.card {
+  background-color: whitesmoke;
+  max-width: 400px;
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-style: inset;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.card-header {
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+.card-image {
+  width: 90% !important;
+  max-height: 212px;
+  margin: 0 5%;
+  border-radius: 5px 5px 0 0;
+}
+
+.card-text {
+  text-align: center !important;
+  text-justify: distribute !important;
+}
+
+.card-footer {
+  border-top: 1px solid lightgrey;
+  padding-bottom: 8px;
+}
+
+.default-color, .blue, .green {
+  font-weight: bold;
+}
+
+.default-color {
+  color: black;
+}
+
+.blue {
+  color: blue;
+}
+.green {
+  color: darkgreen;
+}

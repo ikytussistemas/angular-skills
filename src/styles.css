@@ -1,2 +1,34 @@
 /* Add application styles & imports to this file! */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-size: 14px;
+    overflow: auto;
+}
+
+.bg-skill {
+  /*background-image: url('../src/assets/skill-2.jpg');*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 95%;
+}
+
+.space {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

@@ -6,16 +6,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppComponent } from './app.component';
+
 import { CardComponent } from './dashboard/card/card.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FakeApiService } from './fake-api.service';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FakeApiService } from './services/fake-api.service';
 import { HelloComponent } from './hello.component';
+import { LoadingModule } from './components/loading/loading.module';
 
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatChipsModule, MatCardModule, HttpClientModule, InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000}) ],
-  declarations: [ AppComponent, HelloComponent, DashboardComponent, CardComponent ],
+  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatChipsModule,
+                  MatCardModule, HttpClientModule, LoadingModule.forRoot(), InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000}) ],
+  declarations: [ AppComponent, HelloComponent, DashboardComponent, CardComponent, HeaderComponent, FooterComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

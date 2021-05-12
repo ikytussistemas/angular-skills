@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+import { Skill } from '../models/skill';
+import { LoadingService } from '../components/loading/loading.service';
+import { SkillService } from '../services/skill.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,12 +11,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DashboardComponent implements OnInit {
 
-  cards: Array<any>;
+  cards: Skill[];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private service: SkillService,
+    private load: LoadingService,
+    ) { }
 
   ngOnInit() {
-    this.httpClient.get('/api/skills').subscribe((ret: Array<any>) => this.cards = ret);
+    this.load.show({});
+    this.service.findAll().subscribe((ret: Skill[]) => {
+      this.cards = ret;
+      this.load.dismiss();
+    });
   }
 
 }

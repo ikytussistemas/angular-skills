@@ -6,7 +6,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 })
 export class FakeApiService implements InMemoryDbService {
 
-  constructor() { }
+  constructor( ) { }
 
   createDb() {
 
@@ -21,4 +21,5 @@ export class FakeApiService implements InMemoryDbService {
 
     return { skills };
   }
+
 }
